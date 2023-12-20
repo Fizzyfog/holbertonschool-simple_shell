@@ -74,20 +74,24 @@ int handle_exit(char **args, char *buffer, int loops)
   */
 void handle_env(void)
 {
-	int i;
+	int index;
 
-	for (i = 0; environ[i] != NULL; i++)
+	for (index = 0; environ[index] != NULL; index++)
 	{
-		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
+		write(STDOUT_FILENO, environ[index], _strlen(environ[index]));
 		write(STDOUT_FILENO, "\n", 1);
 	};
 }
 
 
 /**
-  * handle_cd - Change directory according argument
-  * @args: user input array arguments  * HANDLE ERRORS *
-  * Return: Nothing
+  * handle_cd - Changes current working directory according to argument
+  * @args: user's input arguments as array of strings
+  * 2nd argument, if present, is the target directory.
+  * If 2nd argument is NULL or '~', change to the home directory.
+  * If 2nd argument is '-', change to the previous directory.
+  * Return: Nothing. If error during directory print error message.
+  */
   */
 void handle_cd(char **args)
 {
