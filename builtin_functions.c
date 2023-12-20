@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
-  * exec_builtin - Initializes built-in functions
-  * @args: user input array arguments
-  * @buffer: getline malloc'd user input
-  * @loops : times that the loop has been executed
-  * Return: 0 on exit, 1 to continue with the program
-  */
+* exec_builtin - Initializes built-in functions
+* @args: user input array arguments
+* @buffer: getline malloc'd user input
+* @loops : times that the loop has been executed
+* Return: 0 on exit, 1 to continue with the program
+*/
 int exec_builtin(char **args, char *buffer, int loops)
 {
 	if (_strcmp(args[0], "env") == 0)
@@ -28,16 +28,17 @@ int exec_builtin(char **args, char *buffer, int loops)
 }
 
 /**
-  * handle_exit - Function that exits the Simple Shell
-  * @args: user input array arguments
-  * args[1] is the number to exit
-  * @buffer: getline malloc'd user input
-  * @loops : times that the loop has been executed
-  * Return: Nothing
-  */
+* handle_exit - Function that exits the Simple Shell
+* @args: user input array arguments
+* args[1] is the number to exit
+* @buffer: getline malloc'd user input
+* @loops : times that the loop has been executed
+* Return: Nothing
+*/
 int handle_exit(char **args, char *buffer, int loops)
 {
 	int status = 0;
+
 	char err[100];
 
 	if (args[1] != NULL)
@@ -69,9 +70,9 @@ int handle_exit(char **args, char *buffer, int loops)
 }
 
 /**
-  * handle_env - Prints the global environment variable
-  * Return: Nothing
-  */
+* handle_env - Prints the global environment variable
+* Return: Nothing
+*/
 void handle_env(void)
 {
 	int index;
@@ -85,26 +86,26 @@ void handle_env(void)
 
 
 /**
-  * handle_cd - Changes current working directory according to argument
-  * @args: user's input arguments as array of strings
-  * 2nd argument, if present, is the target directory.
-  * If 2nd argument is NULL or '~', change to the home directory.
-  * If 2nd argument is '-', change to the previous directory.
-  * Return: Nothing. If error during directory print error message.
-  */
-  */
+* handle_cd - Changes current working directory according to argument
+* @args: user's input arguments as array of strings
+* 2nd argument, if present, is the target directory.
+* If 2nd argument is NULL or '~', change to the home directory.
+* If 2nd argument is '-', change to the previous directory.
+* Return: Nothing. If error during directory print error message.
+*/
 void handle_cd(char **args)
 {
-	char *home = _getenv("HOME");
-	char *previous = _getenv("OLDPWD");
+	char *home_dir = _getenv("HOME");
 
-	if ((args[1] == NULL && home) || (args[1][0] == '~' && home))
+	char *previous_dir = _getenv("OLDPWD");
+
+	if ((args[1] == NULL && home_dir) || (args[1][0] == '~' && home_dir))
 	{
-		chdir(home);
+		chdir(home_dir);
 	}
-	else if (args[1][0] == '-' && previous)
+	else if (args[1][0] == '-' && previous_dir)
 	{
-		chdir(previous); /* this does not work properly */
+		chdir(previous_dir); /* this does not work properly */
 	}
 	else if (chdir(args[1]) != 0)
 	{
@@ -113,11 +114,11 @@ void handle_cd(char **args)
 }
 
 /**
- * signal_handle - This program allows ctrl+C to be
- * printed and new line with enter is pressed
- * @sign: int
- * Return: void
- */
+* signal_handle - This program allows ctrl+C to be
+* printed and new line with enter is pressed
+* @sign: int
+* Return: void
+*/
 void signal_handle(int sign)
 {
 	if (sign == SIGINT)
