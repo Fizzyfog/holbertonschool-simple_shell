@@ -29,7 +29,7 @@ shell.c - Contains the main code that handles the execution of user commands.
 .PP
 _getenv.c - Contains the '_getenv' function to retrieve the value of a specified environment variable.
 .PP
-builtin_functions.c - Contains the shell's built-in functions such as cd, echo, exit, etc.
+builtin_functions.c - Contains the shell built-in functions such as cd, echo, exit, etc.
 .PP
 execute.c - Manages command execution in the shell.
 .PP
@@ -41,7 +41,7 @@ path_append.c - Adds a specified path to the PATH environment variable.
 .PP
 print_error.c - Handles the display of error messages.
 .PP
-get_localprog.c - Initializes the shell's command search.
+get_localprog.c - Initializes the shell command search.
 .PP
 split_arguments.c - Splits command line arguments into several tokens.
 .PP
