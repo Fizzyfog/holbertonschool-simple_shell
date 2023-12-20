@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strlen - Counts the number of characters in an array of characters
- * @str: string
- * Return: length of the array characters
+ * _strlen - Calculates the length of a string
+ * @str: string to be measured
+ * Return: length of string
  */
 
 int _strlen(char *str)
