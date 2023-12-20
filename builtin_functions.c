@@ -98,14 +98,14 @@ void handle_cd(char **args)
 	char *home_dir = _getenv("HOME");
 
 	char *previous_dir = _getenv("OLDPWD");
-
+	/* TODO: #7 #6 FIX CONDITION & handle error */
 	if ((args[1] == NULL && home_dir) || (args[1][0] == '~' && home_dir))
 	{
 		chdir(home_dir);
 	}
 	else if (args[1][0] == '-' && previous_dir)
 	{
-		chdir(previous_dir); /* this does not work properly */
+		chdir(previous_dir); /* TODO: #5 FIX THIS */
 	}
 	else if (chdir(args[1]) != 0)
 	{
