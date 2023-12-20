@@ -13,9 +13,9 @@ Simple shell implementation for Holberton School Lille. First term final project
 
 - [➤ Description]()
 - [➤ Flowchart]()
-- [➤ Format types]()
-- [➤ Examples]()
-- [➤ Files that make up the _printf]()
+- [➤ How to use]()
+- [➤ File Descriptions]()
+- [➤ Tests]()
 - [➤ Requirements]()
 - [➤ Author]()
 - [➤ License]()
@@ -72,7 +72,7 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 | get_filepath.c    | The get_filepath.c file contains the code for the function that determines the full path of a file or program. This function is useful for locating files or programs to be executed by the shell."    |
 | path_append.c    | The path_append.c file contains the code for the function that adds a specified path to the PATH environment variable. This function is useful for extending the locations where the shell looks for programs to run.    |
 | print_error.c    | The print_error.c file contains the code for the function that handles the display of error messages. This function is used to inform the user when an error occurs during shell execution.    |
-| searchinit.c    | The searchinit.c file contains the code for the function that initializes the shell's command search. This function prepares the shell to search for commands in the various directories specified in the PATH environment variable.    |
+| get_localprog.c    | The get_localprog.c file contains the code for the function that initializes the shell's command search. This function prepares the shell to search for commands in the various directories specified in the PATH environment variable.    |
 | split_arguments.c    | The split_arguments.c file contains the code for the function that splits command line arguments into several tokens. This function is essential for correctly interpreting user commands and passing them to the appropriate functions for execution.    |
 | string_functions.c    | The string_functions.c file contains code for various functions that manipulate strings. These functions can include operations such as comparing strings, copying strings, searching within a string and so on. They are used throughout the program to manage string data.    |
 
@@ -82,13 +82,10 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 
 ### ➤ Valgrind:
 
-* String without type:``
-	* Output: ``
-
 ## ➤ Man:
 
 * Read the man using :
-``` man ./man_3_printf ```
+
 
 ----------
 
