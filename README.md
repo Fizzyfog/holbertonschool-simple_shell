@@ -125,11 +125,11 @@ $
 ### ➤ Valgrind:
 
  * to test for segmentations errors and memory leeks use :
-  * ```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```
+```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```
 ## ➤ Man:
 
 * Read the man using :
- * ```man ./man_1_simple_shell```
+```man ./man_1_simple_shell```
 
 ----------
 
