@@ -30,19 +30,19 @@ void print_error(char **argv, char **args, int loops)
 
 void printfnum(int loops)
 {
-	int i;
+	int index;
 	unsigned int n;
 	char num;
 
 	n = loops;
-	i = 1;
-	while ((n / i) > 9)
-		i *= 10;
-	while (i >= 1)
+	index = 1;
+	while ((n / index) > 9)
+		index *= 10;
+	while (index >= 1)
 	{
-		num = ((n / i) % 10) + '0';
+		num = ((n / index) % 10) + '0';
 		write(STDERR_FILENO, &num, 1);
-		i /= 10;
+		index /= 10;
 	}
 }
 
@@ -53,16 +53,16 @@ void printfnum(int loops)
  */
 int _isdigit(char *number)
 {
-	int i = 0;
+	int index = 0;
 
 	if (number == NULL)
 		return (0);
 
-	while (number[i])
+	while (number[index])
 	{
-		if (number[i] < 47 || number[i] > 57)
+		if (number[index] < 47 || number[index] > 57)
 			return (0);
-		i++;
+		index++;
 	}
 	return (1);
 
