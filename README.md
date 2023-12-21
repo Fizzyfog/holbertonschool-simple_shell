@@ -11,14 +11,14 @@ Simple shell implementation for Holberton School Lille. First term final project
 
 ## ➤ Menu:
 
-- [➤ Description]()
-- [➤ Flowchart]()
-- [➤ Format types]()
-- [➤ Examples]()
-- [➤ Files that make up the _printf]()
-- [➤ Requirements]()
-- [➤ Author]()
-- [➤ License]()
+- [➤ Description](https://github.com/Fizzyfog/holbertonschool-simple_shell#-description)
+- [➤ Flowchart](https://github.com/Fizzyfog/holbertonschool-simple_shell#-flowchart)
+- [➤ How to use]()
+- [➤ File Descriptions]()
+- [➤ Tests]()
+- [➤ Requirements](https://github.com/Fizzyfog/holbertonschool-simple_shell#-requirements)
+- [➤ Author](https://github.com/Fizzyfog/holbertonschool-simple_shell#-author)
+- [➤ License](https://github.com/Fizzyfog/holbertonschool-simple_shell#-license)
 
 
 ----------
@@ -36,6 +36,14 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 ----------
 
 ## ➤ If you want to use our Simple Shell:
+
+### ➤ Install:
+To use our simple shell you can clone this repository:
+ ```$ git clone https://github.com/MathieuMorel62/holbertonschool-simple_shell.git ```
+
+### ➤ Execute:
+To run our Simple Shell :
+    ```./hsh```
 
 ### ➤ Librairies:
 #include <stdarg.h>
@@ -80,15 +88,38 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 
 ## ➤ Tests:
 
+Your shell should work this way in interactive mode :
+  ```$ ./hsh
+     ($) /bin/ls
+     hsh main.c shell.c
+     ($)
+     ($) exit
+      $
+    ```
+
+As well as in non-interactive mode :
+```c
+     $ echo "/bin/ls" | ./hsh
+     hsh main.c shell.c test_ls_2
+     $
+     $ cat test_ls_2
+     /bin/ls
+     /bin/ls
+     $
+     $ cat test_ls_2 | ./hsh
+     hsh main.c shell.c test_ls_2
+     hsh main.c shell.c test_ls_2
+     $
+```
+
 ### ➤ Valgrind:
 
-* String without type:``
-	* Output: ``
-
+ to test for segmentations errors and memory leeks use :
+ ```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```
 ## ➤ Man:
 
 * Read the man using :
-``` man ./man_3_printf ```
+ ```man ./man_1_simple_shell```
 
 ----------
 
