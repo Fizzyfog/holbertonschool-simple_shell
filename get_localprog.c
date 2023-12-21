@@ -43,7 +43,7 @@ int search_dir(char **directories, char **args)
 		chdir(directories[index]);
 		if (stat(args[0], &file_status) == 0)
 		{
-			args[0] = path_append(directories[i], args[0]);
+			args[0] = path_append(directories[index], args[0]);
 			if (args[0] == NULL)
 			{
 				free_memory(1, cwd);
