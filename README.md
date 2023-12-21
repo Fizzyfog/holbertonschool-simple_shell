@@ -20,8 +20,8 @@ Simple shell implementation for Holberton School Lille. First term final project
   * [For compilation](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-for-compilation)
 * [➤ File Descriptions](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-files-description)
 * [➤ Tests](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-tests)
-* [Valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-valgrind)
-* [Man](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-man)
+  * [Valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-valgrind)
+* [➤ Man](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-man)
 * [➤ Requirements](https://github.com/Fizzyfog/holbertonschool-simple_shell#-requirements)
 * [➤ Author](https://github.com/Fizzyfog/holbertonschool-simple_shell#-author)
 * [➤ License](https://github.com/Fizzyfog/holbertonschool-simple_shell#-license)
@@ -37,7 +37,7 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 
 ## ➤ Flowchart:
 
-![➤ Flowchart ➤]()
+![➤ Flowchart ➤](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/flowchart_simple_shell.jpg)
 
 ----------
 
@@ -111,7 +111,6 @@ $
 As well as in non-interactive mode :
 
 ```bash
-c
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
 $
@@ -131,7 +130,8 @@ $
 
  * to test for segmentations errors and memory leeks use :<br>
 
-```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```
+    ```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```<br>
+![Test valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/valgrind_shs.png)
 
 ----------
 
@@ -139,7 +139,7 @@ $
 
 * Read the man using :<br>
 
-```man ./man_1_simple_shell```
+  ```man ./man_1_simple_shell```
 
 ----------
 
@@ -147,13 +147,11 @@ $
 
 **General**
 
-* All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-* A README.md file, at the root of the folder of the project is mandatory
+* Compilation: Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 * Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
 * Your shell should not have any memory leaks
 * No more than 5 functions per file
 * All your header files should be include guarded
-* Use system calls only when you need to (why?)
 
 ----------
 
