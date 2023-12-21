@@ -51,7 +51,7 @@ To use our simple shell you can clone this repository:<br>
 ### ➤ Execute:
 To run our Simple Shell :<br>
 
-    ```./hsh```
+  ```./hsh```
 
 ### ➤ Librairies:
 - ```#include <stdarg.h>```
