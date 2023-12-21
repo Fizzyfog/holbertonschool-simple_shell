@@ -20,8 +20,8 @@ Simple shell implementation for Holberton School Lille. First term final project
   * [For compilation](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-for-compilation)
 * [➤ File Descriptions](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-files-description)
 * [➤ Tests](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-tests)
-  * [Valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-valgrind)
-  * [Man](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-man)
+* [Valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-valgrind)
+* [Man](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-man)
 * [➤ Requirements](https://github.com/Fizzyfog/holbertonschool-simple_shell#-requirements)
 * [➤ Author](https://github.com/Fizzyfog/holbertonschool-simple_shell#-author)
 * [➤ License](https://github.com/Fizzyfog/holbertonschool-simple_shell#-license)
@@ -44,11 +44,13 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 ## ➤ If you want to use our Simple Shell:
 
 ### ➤ Install:
-To use our simple shell you can clone this repository:
- ```$ git clone https://github.com/Fizzyfog/holbertonschool-simple_shell.git ```
+To use our simple shell you can clone this repository:<br>
+
+```$ git clone https://github.com/Fizzyfog/holbertonschool-simple_shell.git ```
 
 ### ➤ Execute:
-To run our Simple Shell :
+To run our Simple Shell :<br>
+
     ```./hsh```
 
 ### ➤ Librairies:
@@ -68,7 +70,8 @@ To run our Simple Shell :
 
 ## ➤ For compilation: 
 
-* Compile the code using :
+* Compile the code using :<br>
+
 ``` gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh ```
 
 ----------
@@ -122,13 +125,20 @@ hsh main.c shell.c test_ls_2
 $
 ```
 
+----------
+
 ### ➤ Valgrind:
 
- * to test for segmentations errors and memory leeks use :
+ * to test for segmentations errors and memory leeks use :<br>
+
 ```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```
+
+----------
+
 ## ➤ Man:
 
-* Read the man using :
+* Read the man using :<br>
+
 ```man ./man_1_simple_shell```
 
 ----------
