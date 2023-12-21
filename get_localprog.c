@@ -33,14 +33,14 @@ int exec_local_program(char **args)
 int search_dir(char **directories, char **args)
 {
 	char *cwd;
-	int i;
+	int index;
 	struct stat file_status;
 
 	cwd = getcwd(NULL, 0);
 
-	for (i = 0; directories[i] != NULL; i++)
+	for (index = 0; directories[index] != NULL; index++)
 	{
-		chdir(directories[i]);
+		chdir(directories[index]);
 		if (stat(args[0], &file_status) == 0)
 		{
 			args[0] = path_append(directories[i], args[0]);
@@ -55,7 +55,7 @@ int search_dir(char **directories, char **args)
 	}
 	chdir(cwd);
 	free_memory(1, cwd);
-	if (directories[i] == NULL)
+	if (directories[index] == NULL)
 	{
 		free_memory(2, directories);
 		return (-1);
