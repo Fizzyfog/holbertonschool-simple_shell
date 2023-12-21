@@ -1,10 +1,13 @@
 #include "main.h"
 
 /**
-  * get_filepath - Searches in an environment variable for a progr file path,
-  * stores subdirs in an array, and validate if the prog file path is available
-  * @args: user input array arguments
-  * Return: 0 on success, -1 on failure
+  * get_filepath - Searches PATH for a program's file path.
+  * Tokenizes PATH into subdirectories, stores them in an array,
+  * and checks if the program file path exists in these directories.
+  *
+  * @args: Array of strings representing user's input arguments.
+  * 1st argument is the program to search.
+  * Return: 0 if program path is found, -1 if not found or error.
   */
 int get_filepath(char **args)
 {
