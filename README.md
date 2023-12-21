@@ -45,7 +45,7 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 
 ### ➤ Install:
 To use our simple shell you can clone this repository:
- ```$ git clone https://github.com/MathieuMorel62/holbertonschool-simple_shell.git ```
+ ```$ git clone https://github.com/Fizzyfog/holbertonschool-simple_shell.git ```
 
 ### ➤ Execute:
 To run our Simple Shell :
@@ -155,4 +155,4 @@ $
 
 ## ➤ License:
 
-This project is subject to the MIT license. For detailed information on the conditions of this license, please consult the [LICENSE](https://github.com/amandinekemp/holbertonschool-simple_shell/blob/main/LICENSE) file included in the project.
+This project is subject to the MIT license. For detailed information on the conditions of this license, please consult the [LICENSE](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/LICENSE) file included in the project.
