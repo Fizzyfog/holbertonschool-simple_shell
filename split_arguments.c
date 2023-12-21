@@ -47,18 +47,18 @@ char **get_tokens(char *buffer)
  */
 int countarg(char *buffer)
 {
-	int i, count, flag, j;
+	int index, count, flag, j;
 	char *delimiter = " :";
 
-	flag = i = 0;
+	flag = index = 0;
 	count = 1;
 	if (buffer == NULL)
 		return (count);
-	while (buffer[i] != '\0')
+	while (buffer[index] != '\0')
 	{
 		for (j = 0; delimiter[j] != '\0'; j++)
 		{
-			if (buffer[i] == delimiter[j] && flag == 0)
+			if (buffer[index] == delimiter[j] && flag == 0)
 			{
 				count++;
 				flag = 1;
@@ -67,7 +67,7 @@ int countarg(char *buffer)
 		}
 		if (delimiter[j] == '\0')
 			flag = 0;
-		i++;
+		index++;
 	}
 	return (count + 1);
 }
