@@ -24,13 +24,14 @@ int _strlen(char *str)
 
 int _strcmp(char *s1, char *s2)
 {
-	int ch = 0;
+	int char_idx = 0;
 
-	while ((s1[ch] != '\0' && s2[ch] != '\0') && s1[ch] == s2[ch])
+	while ((s1[char_idx] != '\0' && s2[char_idx] != '\0') &&
+		s1[char_idx] == s2[char_idx])
 	{
-		ch++;
+		char_idx++;
 	}
-	return (s1[ch] - s2[ch]);
+	return (s1[char_idx] - s2[char_idx]);
 }
 
 /**
