@@ -58,7 +58,7 @@ int handle_exit(char **args, char *buffer, int loops)
 			/* Conditions pour messages erreurs */
 			if (exit_status < 0)
 			{
-				sprintf(error, "./hsh: %d: %s: Illegal number %s\n"
+				sprintf(error, "./hsh: %d: %s: Invalid number %s\n"
 					, loops, args[0], args[1]);
 				write(STDERR_FILENO, &error, _strlen(error));
 				exit_status = 2;
@@ -66,7 +66,7 @@ int handle_exit(char **args, char *buffer, int loops)
 		}
 		else
 		{
-			sprintf(error, "./hsh: %d: %s: Illegal number: %s\n",
+			sprintf(error, "./hsh: %d: %s: Invalid number: %s\n",
 				loops, args[0], args[1]);
 			write(STDERR_FILENO, &error, _strlen(error));
 			exit_status = 2;
