@@ -11,7 +11,7 @@ char **get_tokens(char *buffer)
 {
 	char **token_list = malloc(sizeof(char *) * countarg(buffer));
 	char *token;
-	int index = 0;
+	int buffer_index = 0;
 
 	if (buffer == NULL || token_list == NULL)
 	{
@@ -22,9 +22,9 @@ char **get_tokens(char *buffer)
 
 	while (token != NULL)
 	{
-		token_list[index] = _strdup(token);
+		token_list[buffer_index] = _strdup(token);
 
-		if (token_list[index] == NULL)
+		if (token_list[buffer_index] == NULL)
 		{
 			free_memory(2, token_list);
 			return (NULL);
@@ -32,10 +32,10 @@ char **get_tokens(char *buffer)
 
 		token = strtok(NULL, DELIMITER);
 
-		index++;
+		buffer_index++;
 	}
 
-	token_list[index] = token;
+	token_list[buffer_index] = token;
 
 	return (token_list);
 }
@@ -47,27 +47,27 @@ char **get_tokens(char *buffer)
  */
 int countarg(char *buffer)
 {
-	int index, count, flag, j;
+	int buffer_index, count, flag, delimiter_idx;
 	char *delimiter = " :";
 
-	flag = index = 0;
+	flag = buffer_index = 0;
 	count = 1;
 	if (buffer == NULL)
 		return (count);
-	while (buffer[index] != '\0')
+	while (buffer[buffer_index] != '\0')
 	{
-		for (j = 0; delimiter[j] != '\0'; j++)
+		for (delimiter_idx = 0; delimiter[delimiter_idx] != '\0'; delimiter_idx++)
 		{
-			if (buffer[index] == delimiter[j] && flag == 0)
+			if (buffer[buffer_index] == delimiter[delimiter_idx] && flag == 0)
 			{
 				count++;
 				flag = 1;
 				break;
 			}
 		}
-		if (delimiter[j] == '\0')
+		if (delimiter[delimiter_idx] == '\0')
 			flag = 0;
-		index++;
+		buffer_index++;
 	}
 	return (count + 1);
 }
