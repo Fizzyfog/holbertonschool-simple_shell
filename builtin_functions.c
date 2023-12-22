@@ -126,11 +126,12 @@ void handle_cd(char **args)
 
 /**
 * signal_handle - This program allows ctrl+C to be
-* printed and new line with enter is pressed
+* printed and new line when enter is pressed
 * @sign: int
 * Return: void
 */
 void signal_handle(int sign)
+/* Vérifie si le signal reçu est SIGINT (généré par ctrl+C) */
 {
 	if (sign == SIGINT)
 		write(STDOUT_FILENO, "\n$ ", 3);
