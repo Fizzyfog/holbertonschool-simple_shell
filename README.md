@@ -51,7 +51,7 @@ To use our simple shell you can clone this repository:<br>
 ### ➤ Execute:
 To run our Simple Shell :<br>
 
-  ``` ./hsh ```
+  ```./hsh```
 
 ### ➤ Librairies:
 - ```#include <stdarg.h>```
@@ -72,7 +72,7 @@ To run our Simple Shell :<br>
 
 * Compile the code using :<br>
 
-```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
+  ```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
 
 ----------
 
@@ -130,10 +130,8 @@ $
 
  * to test for segmentations errors and memory leeks use :<br>
 
-    ```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```
-    <br>
-  
-  
+    ```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```<br>
+
 ![Test valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/valgrind_shs.png)
 
 ----------
