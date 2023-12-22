@@ -8,7 +8,7 @@
 int execute(char **args)
 {
 	pid_t child_pid;
-	int status;
+	int exit_status;
 
 	child_pid = fork();
 	if (child_pid < 0)
@@ -20,9 +20,9 @@ int execute(char **args)
 	}
 	else
 	{
-		wait(&status);
-		if (WIFEXITED(status) && status != 0)
-			exit(WEXITSTATUS(status));
+		wait(&exit_status);
+		if (WIFEXITED(exit_status) && exit_status != 0)
+			exit(WEXITSTATUS(exit_status));
 	}
 	return (0);
 }
