@@ -24,13 +24,14 @@ int _strlen(char *str)
 
 int _strcmp(char *s1, char *s2)
 {
-	int ch = 0;
+	int char_idx = 0;
 
-	while ((s1[ch] != '\0' && s2[ch] != '\0') && s1[ch] == s2[ch])
+	while ((s1[char_idx] != '\0' && s2[char_idx] != '\0') &&
+		s1[char_idx] == s2[char_idx])
 	{
-		ch++;
+		char_idx++;
 	}
-	return (s1[ch] - s2[ch]);
+	return (s1[char_idx] - s2[char_idx]);
 }
 
 /**
@@ -92,22 +93,22 @@ char *_strdup(char *str)
 
 int _atoi(char *s)
 {
-	int i, sign;
+	int index, sign;
 	unsigned int number;
 
-	i = number = 0;
+	index = number = 0;
 	sign = 1;
-	for (; (!(s[i] >= 48 && s[i] <= 57)) && s[i] != '\0'; i++)
+	for (; (!(s[index] >= 48 && s[index] <= 57)) && s[index] != '\0'; index++)
 	{
-		if (s[i] == 45)
+		if (s[index] == 45)
 			sign = sign * -1;
 
 	}
-	if (s[i] == '\0')
+	if (s[index] == '\0')
 		return (number);
-	for (; (s[i] >= 48 && s[i] <= 57) && s[i] != '\0'; i++)
+	for (; (s[index] >= 48 && s[index] <= 57) && s[index] != '\0'; index++)
 	{
-		number = (number * 10) + (s[i] - 48);
+		number = (number * 10) + (s[index] - 48);
 	}
 	return (number * sign);
 }

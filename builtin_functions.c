@@ -9,15 +9,19 @@
 */
 int exec_builtin(char **args, char *buffer, int loops)
 {
+	/* check si 1er argument est env */
 	if (_strcmp(args[0], "env") == 0)
 	{
+		/* execute commande env */
 		handle_env();
+		/* free mémoire allouée au buffer et arguments*/
 		free_memory(1, buffer), free_memory(2, args);
 		return (1);
 	}
+	/* check si buffer contient "exit" */
 	else if (_strcmp(buffer, "exit") == 0)
 		handle_exit(args, buffer, loops);
-
+	/* check si 1er argument est cd */
 	else if (_strcmp(args[0], "cd") == 0)
 	{
 		handle_cd(args);
@@ -37,36 +41,40 @@ int exec_builtin(char **args, char *buffer, int loops)
 */
 int handle_exit(char **args, char *buffer, int loops)
 {
-	int status = 0;
-
-	char err[100];
-
+	int exit_status = 0;
+	/* initialise buffer de messages d'erreur */
+	char error[100];
+	/* check si 2e arg n'est pas NULL */
 	if (args[1] != NULL)
 	{
+		/* check si 2e arg est un nombre */
 		if (_isdigit(args[1]))
 		{
-			status = _atoi(args[1]);
-			if (status > 255) /* Bigger values result to mod 256 */
-				status = status % 256;
-			if (status < 0)
+			/* convertir string en int et l'attribue à exit status */
+			exit_status = _atoi(args[1]);
+			/* Si stat > 255, %256 le ramène in intervalle 0-255 */
+			if (exit_status > 255)
+				exit_status = exit_status % 256;
+			/* Conditions pour messages erreurs */
+			if (exit_status < 0)
 			{
-				sprintf(err, "./hsh: %d: %s: Illegal number %s\n"
+				sprintf(error, "./hsh: %d: %s: Illegal number %s\n"
 					, loops, args[0], args[1]);
-				write(STDERR_FILENO, &err, _strlen(err));
-				status = 2;
+				write(STDERR_FILENO, &error, _strlen(error));
+				exit_status = 2;
 			}
 		}
 		else
 		{
-			sprintf(err, "./hsh: %d: %s: Illegal number: %s\n",
+			sprintf(error, "./hsh: %d: %s: Illegal number: %s\n",
 				loops, args[0], args[1]);
-			write(STDERR_FILENO, &err, _strlen(err));
-			status = 2;
+			write(STDERR_FILENO, &error, _strlen(error));
+			exit_status = 2;
 		}
 	}
 
 	free_memory(1, buffer), free_memory(2, args);
-	exit(status);
+	exit(exit_status);
 }
 
 /**
@@ -76,9 +84,10 @@ int handle_exit(char **args, char *buffer, int loops)
 void handle_env(void)
 {
 	int index;
-
+	/* Parcourt chaque variable d'environnement jusqu'à NULL */
 	for (index = 0; environ[index] != NULL; index++)
 	{
+		/* écrit env var sur sortie standard */
 		write(STDOUT_FILENO, environ[index], _strlen(environ[index]));
 		write(STDOUT_FILENO, "\n", 1);
 	};
@@ -95,31 +104,34 @@ void handle_env(void)
 */
 void handle_cd(char **args)
 {
-	char *home_dir = _getenv("HOME");
+	char *home_dir = _getenv("HOME"); /* récup répertoire d'acuueil */
 
 	char *previous_dir = _getenv("OLDPWD");
-	/* TODO: #7 #6 FIX CONDITION & handle error */
+	/* va au rep d'accueil si 2e arg est NULL- ou ~ */
 	if ((args[1] == NULL && home_dir) || (args[1][0] == '~' && home_dir))
 	{
 		chdir(home_dir);
 	}
+	/* va au rep précédent si 2e arg est - */
 	else if (args[1][0] == '-' && previous_dir)
 	{
-		chdir(previous_dir); /* TODO: #5 FIX THIS */
+		chdir(previous_dir);
 	}
+	/* Si changement de répertoire échoue, affiche message d'erreur */
 	else if (chdir(args[1]) != 0)
 	{
-		perror("hsh"); /* if directory does not exist */
+		perror("Error: impossible to change directory");
 	}
 }
 
 /**
 * signal_handle - This program allows ctrl+C to be
-* printed and new line with enter is pressed
+* printed and new line when enter is pressed
 * @sign: int
 * Return: void
 */
 void signal_handle(int sign)
+/* Vérifie si le signal reçu est SIGINT (généré par ctrl+C) */
 {
 	if (sign == SIGINT)
 		write(STDOUT_FILENO, "\n$ ", 3);

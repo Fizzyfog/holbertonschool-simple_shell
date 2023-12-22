@@ -8,21 +8,23 @@
 int execute(char **args)
 {
 	pid_t child_pid;
-	int status;
+	int exit_status;
 
-	child_pid = fork();
-	if (child_pid < 0)
+	child_pid = fork(); /* create child process */
+	if (child_pid < 0) /* check if child process was successfully created */
 		exit(1);
-	else if (child_pid == 0)
+	else if (child_pid == 0) /* if child process */
 	{
 		if (execve(args[0], args, environ) == -1)
+		/* exit with command not found error, exit status 127 */
 			exit(127);
 	}
 	else
 	{
-		wait(&status);
-		if (WIFEXITED(status) && status != 0)
-			exit(WEXITSTATUS(status));
+		wait(&exit_status);
+		/* check if child process ended normally */
+		if (WIFEXITED(exit_status) && exit_status != 0)
+			exit(WEXITSTATUS(exit_status));
 	}
 	return (0);
 }

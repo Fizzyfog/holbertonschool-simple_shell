@@ -9,7 +9,7 @@ void free_memory(int n, ...)
 {
 	char **ptr2, *ptr1;
 	va_list valist;
-	int i;
+	int index;
 
 	va_start(valist, n);
 
@@ -25,8 +25,8 @@ void free_memory(int n, ...)
 		ptr2 = va_arg(valist, char **);
 		if (ptr2 == NULL)
 			return;
-		for (i = 0; ptr2[i] != NULL; i++)
-			free(ptr2[i]);
+		for (index = 0; ptr2[index] != NULL; index++)
+			free(ptr2[index]);
 		free(ptr2);
 	}
 
