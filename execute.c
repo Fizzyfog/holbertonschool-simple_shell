@@ -22,6 +22,7 @@ int execute(char **args)
 	else
 	{
 		wait(&exit_status);
+		/* check if child process ended normally */
 		if (WIFEXITED(exit_status) && exit_status != 0)
 			exit(WEXITSTATUS(exit_status));
 	}
