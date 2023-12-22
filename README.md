@@ -46,7 +46,7 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 ### ➤ Install:
 To use our simple shell you can clone this repository:<br>
 
-```$ git clone https://github.com/Fizzyfog/holbertonschool-simple_shell.git ```
+```git clone https://github.com/Fizzyfog/holbertonschool-simple_shell.git```
 
 ### ➤ Execute:
 To run our Simple Shell :<br>
@@ -72,7 +72,7 @@ To run our Simple Shell :<br>
 
 * Compile the code using :<br>
 
-``` gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh ```
+```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
 
 ----------
 
@@ -131,6 +131,8 @@ $
  * to test for segmentations errors and memory leeks use :<br>
 
     ```valgrind --tool=memcheck --leak-check=yes --track-origins=yes --show-leak-kinds=all -s ./hsh```<br>
+  
+  
 ![Test valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/valgrind_shs.png)
 
 ----------
