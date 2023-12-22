@@ -9,15 +9,19 @@
 */
 int exec_builtin(char **args, char *buffer, int loops)
 {
+	/* check si 1er argument est env */
 	if (_strcmp(args[0], "env") == 0)
 	{
+		/* execute commande env */
 		handle_env();
+		/* free mémoire allouée au buffer et arguments*/
 		free_memory(1, buffer), free_memory(2, args);
 		return (1);
 	}
+	/* check si buffer contient "exit" */
 	else if (_strcmp(buffer, "exit") == 0)
 		handle_exit(args, buffer, loops);
-
+	/* check si 1er argument est cd */
 	else if (_strcmp(args[0], "cd") == 0)
 	{
 		handle_cd(args);
@@ -38,16 +42,20 @@ int exec_builtin(char **args, char *buffer, int loops)
 int handle_exit(char **args, char *buffer, int loops)
 {
 	int exit_status = 0;
-
+	/* initialise buffer de messages d'erreur */
 	char error[100];
-
+	/* check si 2e arg n'est pas NULL */
 	if (args[1] != NULL)
 	{
+		/* check si 2e arg est un nombre */
 		if (_isdigit(args[1]))
 		{
+			/* convertir string en int et l'attribue à exit status */
 			exit_status = _atoi(args[1]);
-			if (exit_status > 255) /* Bigger values result to mod 256 */
+			/* Si stat > 255, %256 le ramène in intervalle 0-255 */
+			if (exit_status > 255)
 				exit_status = exit_status % 256;
+			/* Conditions pour messages erreurs */
 			if (exit_status < 0)
 			{
 				sprintf(error, "./hsh: %d: %s: Illegal number %s\n"
