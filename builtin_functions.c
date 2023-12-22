@@ -120,7 +120,7 @@ void handle_cd(char **args)
 	/* Si changement de répertoire échoue, affiche message d'erreur */
 	else if (chdir(args[1]) != 0)
 	{
-		perror("hsh");
+		perror("Error: impossible to change directory");
 	}
 }
 
