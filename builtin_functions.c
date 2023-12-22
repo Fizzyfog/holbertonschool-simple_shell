@@ -58,7 +58,7 @@ int handle_exit(char **args, char *buffer, int loops)
 			/* Conditions pour messages erreurs */
 			if (exit_status < 0)
 			{
-				sprintf(error, "./hsh: %d: %s: Invalid number %s\n"
+				sprintf(error, "./hsh: %d: %s: Illegal number %s\n"
 					, loops, args[0], args[1]);
 				write(STDERR_FILENO, &error, _strlen(error));
 				exit_status = 2;
@@ -66,7 +66,7 @@ int handle_exit(char **args, char *buffer, int loops)
 		}
 		else
 		{
-			sprintf(error, "./hsh: %d: %s: Invalid number: %s\n",
+			sprintf(error, "./hsh: %d: %s: Illegal number: %s\n",
 				loops, args[0], args[1]);
 			write(STDERR_FILENO, &error, _strlen(error));
 			exit_status = 2;
@@ -84,9 +84,10 @@ int handle_exit(char **args, char *buffer, int loops)
 void handle_env(void)
 {
 	int index;
-
+	/* Parcourt chaque variable d'environnement jusqu'à NULL */
 	for (index = 0; environ[index] != NULL; index++)
 	{
+		/* écrit env var sur sortie standard */
 		write(STDOUT_FILENO, environ[index], _strlen(environ[index]));
 		write(STDOUT_FILENO, "\n", 1);
 	};
@@ -103,18 +104,20 @@ void handle_env(void)
 */
 void handle_cd(char **args)
 {
-	char *home_dir = _getenv("HOME");
+	char *home_dir = _getenv("HOME"); /* récup répertoire d'acuueil */
 
 	char *previous_dir = _getenv("OLDPWD");
-
+	/* va au rep d'accueil si 2e arg est NULL- ou ~ */
 	if ((args[1] == NULL && home_dir) || (args[1][0] == '~' && home_dir))
 	{
 		chdir(home_dir);
 	}
+	/* va au rep précédent si 2e arg est - */
 	else if (args[1][0] == '-' && previous_dir)
 	{
 		chdir(previous_dir);
 	}
+	/* Si changement de répertoire échoue, affiche message d'erreur */
 	else if (chdir(args[1]) != 0)
 	{
 		perror("hsh");
