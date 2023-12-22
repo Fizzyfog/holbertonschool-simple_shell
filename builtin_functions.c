@@ -37,36 +37,36 @@ int exec_builtin(char **args, char *buffer, int loops)
 */
 int handle_exit(char **args, char *buffer, int loops)
 {
-	int status = 0;
+	int exit_status = 0;
 
-	char err[100];
+	char error[100];
 
 	if (args[1] != NULL)
 	{
 		if (_isdigit(args[1]))
 		{
-			status = _atoi(args[1]);
-			if (status > 255) /* Bigger values result to mod 256 */
-				status = status % 256;
-			if (status < 0)
+			exit_status = _atoi(args[1]);
+			if (exit_status > 255) /* Bigger values result to mod 256 */
+				exit_status = exit_status % 256;
+			if (exit_status < 0)
 			{
-				sprintf(err, "./hsh: %d: %s: Illegal number %s\n"
+				sprintf(error, "./hsh: %d: %s: Illegal number %s\n"
 					, loops, args[0], args[1]);
-				write(STDERR_FILENO, &err, _strlen(err));
-				status = 2;
+				write(STDERR_FILENO, &error, _strlen(error));
+				exit_status = 2;
 			}
 		}
 		else
 		{
-			sprintf(err, "./hsh: %d: %s: Illegal number: %s\n",
+			sprintf(error, "./hsh: %d: %s: Illegal number: %s\n",
 				loops, args[0], args[1]);
-			write(STDERR_FILENO, &err, _strlen(err));
-			status = 2;
+			write(STDERR_FILENO, &error, _strlen(error));
+			exit_status = 2;
 		}
 	}
 
 	free_memory(1, buffer), free_memory(2, args);
-	exit(status);
+	exit(exit_status);
 }
 
 /**
@@ -98,6 +98,7 @@ void handle_cd(char **args)
 	char *home_dir = _getenv("HOME");
 
 	char *previous_dir = _getenv("OLDPWD");
+
 	if ((args[1] == NULL && home_dir) || (args[1][0] == '~' && home_dir))
 	{
 		chdir(home_dir);
