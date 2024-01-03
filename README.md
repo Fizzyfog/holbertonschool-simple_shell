@@ -12,19 +12,19 @@ Simple shell implementation for Holberton School Lille. First term final project
 ## ➤ Menu:
 
 * [➤ Description](https://github.com/Fizzyfog/holbertonschool-simple_shell#-description)
-* [➤ Flowchart](https://github.com/Fizzyfog/holbertonschool-simple_shell#-flowchart)
-* [➤ How to use](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-if-you-want-to-use-our-simple-shell)
-  * [Install](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-install)
-  * [Execute](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-execute)
-  * [Librairies](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-librairies)
-* [➤ File Descriptions](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-files-description)
-* [➤ For compilation](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-for-compilation)
-* [➤ Tests](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-tests)
-  * [Valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-valgrind)
-* [➤ Man](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-man)
-* [➤ Requirements](https://github.com/Fizzyfog/holbertonschool-simple_shell#-requirements)
-* [➤ Author](https://github.com/Fizzyfog/holbertonschool-simple_shell#-author)
-* [➤ License](https://github.com/Fizzyfog/holbertonschool-simple_shell#-license)
+* [➤ Flowchart](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-flowchart)
+* [➤ If you want to use our Simple Shell](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-if-you-want-to-use-our-simple-shell)
+  * [Install](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-install)
+  * [Execute](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-execute)
+  * [Librairies](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-librairies)
+* [➤ File Descriptions](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-files-description)
+* [➤ For compilation](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-for-compilation)
+* [➤ Tests](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-tests)
+  * [Valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-valgrind)
+* [➤ Man](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-man)
+* [➤ Requirements](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-requirements)
+* [➤ Author](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-author)
+* [➤ License](https://github.com/Fizzyfog/holbertonschool-simple_shell?tab=readme-ov-file#-license)
 
 ----------
 
