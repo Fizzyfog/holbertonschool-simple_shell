@@ -17,15 +17,14 @@ Simple shell implementation for Holberton School Lille. First term final project
   * [Install](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-install)
   * [Execute](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-execute)
   * [Librairies](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-librairies)
-  * [For compilation](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-for-compilation)
 * [➤ File Descriptions](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-files-description)
+* [➤ For compilation](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-for-compilation)
 * [➤ Tests](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-tests)
   * [Valgrind](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-valgrind)
 * [➤ Man](https://github.com/Fizzyfog/holbertonschool-simple_shell/tree/develop#-man)
 * [➤ Requirements](https://github.com/Fizzyfog/holbertonschool-simple_shell#-requirements)
 * [➤ Author](https://github.com/Fizzyfog/holbertonschool-simple_shell#-author)
 * [➤ License](https://github.com/Fizzyfog/holbertonschool-simple_shell#-license)
-
 
 ----------
 
@@ -68,14 +67,6 @@ To run our Simple Shell :<br>
 
 ----------
 
-## ➤ For compilation: 
-
-* Compile the code using :<br>
-
-  ```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
-
-----------
-
 ## ➤ Files description:
 
 | Filename | Description | 
@@ -92,6 +83,14 @@ To run our Simple Shell :<br>
 | [get_localprog.c](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/get_localprog.c)    | The get_localprog.c file contains the code for the function that initializes the shell's command search. This function prepares the shell to search for commands in the various directories specified in the PATH environment variable.    |
 | [split_arguments.c](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/split_arguments.c)    | The split_arguments.c file contains the code for the function that splits command line arguments into several tokens. This function is essential for correctly interpreting user commands and passing them to the appropriate functions for execution.    |
 | [string_functions.c](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/string_functions.c)    | The string_functions.c file contains code for various functions that manipulate strings. These functions can include operations such as comparing strings, copying strings, searching within a string and so on. They are used throughout the program to manage string data.    |
+
+----------
+
+## ➤ For compilation: 
+
+* Compile the code using :<br>
+
+  ```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
 
 ----------
 
