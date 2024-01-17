@@ -36,7 +36,7 @@ The Simple Shell is a user interface program that provides access to the OS. It 
 
 ## ➤ Flowchart:
 
-![➤ Flowchart ➤](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/flowchart_simple_shell.png)
+![➤ Flowchart ➤](https://github.com/Fizzyfog/holbertonschool-simple_shell/blob/main/flowchart_simple_shell_.png)
 
 ----------
 
